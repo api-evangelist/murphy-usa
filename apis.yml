@@ -8,6 +8,8 @@ common:
     url: https://www.linkedin.com/company/murphyusa
   - type: Website
     url: https://www.murphy-usa.com
+  - type: LLMsTxt
+    url: https://murphy-usa.com/llms.txt
 description: >-
   Murphy USA is a leading retailer of gasoline and convenience merchandise, operating
   retail stores primarily in proximity to Walmart Supercenters across the southern
