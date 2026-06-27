@@ -10,7 +10,7 @@ common:
     url: https://www.linkedin.com/company/murphyusa
   - type: Website
     url: https://www.murphy-usa.com
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://murphy-usa.com/llms.txt
 description: >-
   Murphy USA is a leading retailer of gasoline and convenience merchandise, operating
