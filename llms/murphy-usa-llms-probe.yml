@@ -8,11 +8,26 @@
 #
 # Same posture as the well-known probe artifacts: a recorded absence is a valid
 # measurement. Do not delete this to 'clean up' — deleting it restores the bug.
+#
+# 2026-08-28: the previous probe targeted murphy-usa.com, which is NOT a Murphy USA
+# domain — it is a squatted holding page ("This Domain Is For Sale"). The dead
+# LlmsText pointer to it has been removed from apis.yml and the probe re-run
+# against the company's real host, murphyusa.com.
 llms:
-  probed: '2026-08-17'
-  url: https://murphy-usa.com/llms.txt
-  verdict: unreachable
+  probed: '2026-08-28'
+  url: https://www.murphyusa.com/llms.txt
+  status: 404
+  verdict: not-published
   published: false
-  detail: HTTPError
+  detail: >-
+    HTTP 404 from the Kentico CMS ("The resource you are looking for has been
+    removed, had its name changed, or is temporarily unavailable.").
+  also_probed:
+    - url: https://murphyusa.com/llms.txt
+      status: 404
+    - url: https://corporate.murphyusa.com/llms.txt
+      status: 404
+    - url: https://www.murphydriverewards.com/llms.txt
+      status: 404
   note: >-
-    The declared URL could not be fetched.
+    Murphy USA publishes no llms.txt on any host. No LLMsText pointer is claimed.

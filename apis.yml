@@ -10,25 +10,73 @@ accessModel:
   label: Unknown
   confidence: low
   source: []
-  generated: '2026-07-22'
+  generated: '2026-08-28'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/murphy-usa.png
+created: '2026-03-21'
+modified: '2026-08-28'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
 tags:
   - Fortune 500
-url: 
-  https://raw.githubusercontent.com/api-evangelist/murphy-usa/refs/heads/main/apis.yml
-modified: '2026-03-21'
+  - Fuel Retail
+  - Convenience Stores
+  - Gas Stations
+  - Retail
+  - Loyalty Programs
+  - Energy
+url: https://raw.githubusercontent.com/api-evangelist/murphy-usa/refs/heads/main/apis.yml
 apis: []
 common:
-  - type: DomainSecurity
-    url: security/murphy-usa-domain-security.yml
+  - type: Website
+    url: https://www.murphyusa.com
   - type: LinkedIn
     url: https://www.linkedin.com/company/murphyusa
-  - type: Website
-    url: https://www.murphy-usa.com
-  - type: LlmsText
-    url: https://murphy-usa.com/llms.txt
+  - type: TermsOfService
+    url: https://www.murphyusa.com/murphyusa/legal
+  - type: PrivacyPolicy
+    url: https://www.murphyusa.com/murphyusa/legal#privacy-a
+  - type: Support
+    url: https://www.murphyusa.com/murphyusa/Contact-Us
+  - type: HelpCenter
+    url: https://www.murphyusa.com/murphyusa/faqs
+  - type: DomainSecurity
+    url: security/murphy-usa-domain-security.yml
 description: >-
-  Murphy USA is a leading retailer of gasoline and convenience merchandise, operating
-  retail stores primarily in proximity to Walmart Supercenters across the southern
-  and midwestern United States.
+  Murphy USA (NYSE: MUSA) is a Fortune 500 retailer of gasoline and convenience
+  merchandise, headquartered in El Dorado, Arkansas. The company operates roughly
+  1,700 Murphy USA and Murphy Express stores across a 27-state footprint in the
+  southern and midwestern United States, most of them sited in or adjacent to
+  Walmart Supercenter parking lots, and it also owns the QuickChek chain of fresh
+  convenience stores in New Jersey and New York. Its fuel slate spans E-10, E-15,
+  FlexFuel (E85), ethanol-free E0, ULSD diesel, biodiesel and winterized diesel,
+  marketed alongside a FuelAssure fuel-quality monitoring program. Consumer digital
+  engagement runs through the Murphy Drive Rewards loyalty app and a Business Fuel
+  Card program. Murphy USA publishes no public developer program, API reference or
+  machine-readable contract.
+x-enrichment:
+  date: '2026-08-28'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Murphy USA runs its consumer surface on a Kentico CMS that 404s every spec path
+    and 403s the entire /.well-known/ prefix on all three hosts, has no api. or
+    developer. subdomain in DNS, and no GitHub organization — the only programmatic
+    surface is the private backend of the Murphy Drive Rewards mobile app.
+  evidence:
+    - url: https://www.murphyusa.com/openapi.json
+      status: 404
+    - url: https://www.murphyusa.com/.well-known/api-catalog
+      status: 403
+    - url: https://www.murphyusa.com/llms.txt
+      status: 404
+    - url: https://api.github.com/orgs/murphyusa
+      status: 404
+    - url: https://www.murphy-usa.com/
+      status: 200
+  checked: '2026-08-28'

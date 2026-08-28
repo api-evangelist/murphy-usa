@@ -1,0 +1,114 @@
+generated: '2026-08-28'
+method: probed
+source: live GET probes of /.well-known/* on every Murphy USA host
+note: >-
+  NEGATIVE RESULT — recorded deliberately, no common[] pointer emitted. Every
+  /.well-known/* path on every Murphy USA host returns HTTP 403 from the edge, and
+  every non-well-known path returns the Kentico CMS 404 page. The 403 is a blanket
+  path-prefix denial, not a per-document answer: the identical 715-byte
+  "403 Forbidden" nginx body is returned for security.txt, openid-configuration,
+  oauth-authorization-server, api-catalog and ai-plugin.json alike, on all three
+  hosts. No document was served, so no WellKnown or SecurityTxt pointer is claimed.
+  The edge policy is worth reporting to the provider: it forecloses RFC 9116
+  security.txt and RFC 9727 api-catalog publication until the prefix is unblocked.
+
+  SOFT-404 WARNING on the QuickChek host (a Murphy USA-owned brand, acquired 2021,
+  running WordPress rather than Kentico): www.quickchek.com answers HTTP 200 with an
+  HTML page for BOTH /llms.txt and /.well-known/security.txt. Neither is a document —
+  both bodies are the site's <!DOCTYPE html> catch-all, byte-identical in shape to the
+  404 it returns for /openapi.json. These are recorded below as status 200 with
+  served: false so a later pass does not re-credit them as published surfaces.
+hosts:
+  - host: www.murphyusa.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 403
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: corporate.murphyusa.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 403
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: www.murphydriverewards.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 403
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 403
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 403
+        file: null
+      - path: /.well-known/api-catalog
+        status: 403
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 403
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 403
+        file: null
+      - path: /.well-known/agent.json
+        status: 403
+        file: null
+  - host: www.quickchek.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        served: false
+        file: null
+        note: >-
+          Soft-404. HTTP 200 returning the WordPress HTML catch-all, not an RFC 9116
+          document. Treated as a miss.
+      - path: /.well-known/agent-card.json
+        status: 404
+        served: false
+        file: null
+      - path: /llms.txt
+        status: 200
+        served: false
+        file: null
+        note: >-
+          Soft-404. HTTP 200 returning the WordPress HTML catch-all, not an llms.txt.
+          Treated as a miss.
+      - path: /openapi.json
+        status: 404
+        served: false
+        file: null
