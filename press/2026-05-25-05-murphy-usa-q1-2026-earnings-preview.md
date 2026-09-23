@@ -1,7 +1,9 @@
 ---
 title: Murphy USA Q1 2026 earnings preview
 url: https://www.msn.com/en-us/money/savingandinvesting/murphy-usa-q1-2026-earnings-preview/ar-AA21X21Z?ocid=finance-verthp-feeds
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Murphy USA" press release artificial intelligence'
 position: 5
 source: serpapi-google

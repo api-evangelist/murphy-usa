@@ -1,7 +1,9 @@
 ---
 title: Murphy USA signals 45 to 55 new sites in 2026 while ...
 url: https://seekingalpha.com/news/4583125-murphy-usa-signals-45-to-55-new-sites-in-2026-while-keeping-guidance-unchanged-amid-fuel
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Murphy USA" press release artificial intelligence'
 position: 3
 source: serpapi-google

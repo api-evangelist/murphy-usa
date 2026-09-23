@@ -1,7 +1,9 @@
 ---
 title: 'From Manual to Strategic: Murphy USA''s IR Transformation'
 url: https://q4blog.com/how-murphy-usa-unlocked-their-full-potential-with-q4/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Murphy USA" press release artificial intelligence'
 position: 2
 source: serpapi-google

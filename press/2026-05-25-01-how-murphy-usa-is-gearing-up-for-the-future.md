@@ -1,7 +1,9 @@
 ---
 title: How Murphy USA is gearing up for the future
 url: https://www.cstoredive.com/news/how-murphy-usa-is-gearing-up-for-the-future/709562/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Murphy USA" press release artificial intelligence'
 position: 1
 source: serpapi-google
